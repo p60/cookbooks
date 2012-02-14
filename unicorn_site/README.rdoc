@@ -1,0 +1,60 @@
+= DESCRIPTION:
+
+Creates a site definition for a Unicorn website
+
+= REQUIREMENTS:
+
+== Platform:
+
+* untested at the moment
+
+== Cookbooks:
+
+Opscode cookbooks (http://github.com/opscode/cookbooks/tree/master)
+
+= ATTRIBUTES:
+
+* unicorn_site[:port] - port of site
+* unicorn_site[:default_site] - site is the default of a web server
+* unicorn_site[:server_name] - domain name
+* unicorn_site[:upstream_name] - upstream proxy name
+* unicorn_site[:root] - typically the "public" folder for nginx
+* unicorn_site[:static_routes] - list of folders to be handled staticly
+* unicorn_site[:definition_path] - path of definition file, commonly in "sites-available"
+
+= USAGE:
+
+Include the unicorn_site recipe to create a site
+
+  include_recipe "unicorn_site"
+
+= LICENSE:
+
+Copyright (c) 2012, Jason Staten, PeerIntel
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+- Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+- Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+- Neither the name of PeerIntel nor the names of its contributors may be used
+  to endorse or promote products derived from this software without specific
+  prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
