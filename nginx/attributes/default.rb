@@ -43,7 +43,6 @@ default[:nginx][:gzip_comp_level] = "2"
 default[:nginx][:gzip_proxied] = "any"
 default[:nginx][:gzip_types] = [
   "text/plain",
-  "text/html",
   "text/css",
   "application/x-javascript",
   "text/xml",
@@ -52,6 +51,14 @@ default[:nginx][:gzip_types] = [
   "text/javascript",
   "application/javascript"
 ]
+default[:nginx][:gzip_min_length] = 1100
+default[:nginx][:gzip_disable] = "msie6"
+default[:nginx][:gzip_static] = "off"
+default[:nginx][:gzip_vary] = "off"
+default[:nginx][:gzip_buffers] = "16 8k"
+
+default[:nginx][:tcp_nodelay] = "on"
+default[:nginx][:server_tokens] = "off"
 
 default[:nginx][:keepalive]          = "on"
 default[:nginx][:keepalive_timeout]  = 65
