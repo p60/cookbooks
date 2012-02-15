@@ -1,3 +1,6 @@
+lib_file = File.join(node[:kyotocabinet][:dir],'lib','libkyotocabinet.so')
+return if node[:kyotocabinet][:skip_recompile] && File.exists?(lib_file)
+
 include_recipe "build-essential"
 
 kyotocabinet_tar = "kyotocabinet-#{node[:kyotocabinet][:version]}.tar.gz"

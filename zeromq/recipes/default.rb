@@ -1,3 +1,6 @@
+lib_file = File.join(node[:zeromq][:dir],'lib','libzmq.so')
+return if node[:zeromq][:skip_recompile] && File.exists?(lib_file)
+
 include_recipe "build-essential"
 
 case node[:platform]
