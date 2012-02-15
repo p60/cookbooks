@@ -36,13 +36,11 @@ end
 end
 
 nginx_conf_path = "#{node[:nginx][:dir]}/nginx.conf"
-unless File.exists?(nginx_conf_path)
-  template nginx_conf_path do
-    source "nginx.conf.erb"
-    owner "root"
-    group "root"
-    mode 0644
-  end
+template nginx_conf_path do
+  source "nginx.conf.erb"
+  owner "root"
+  group "root"
+  mode 0644
 end
 
 %w{available enabled}.each do |f|
@@ -55,13 +53,11 @@ end
 end
 
 default_site_file = "#{node[:nginx][:dir]}/sites-available/default"
-unless File.exists?(default_site_file)
-  template default_site_file do
-    source "default-site.erb"
-    owner "root"
-    group "root"
-    mode 0644
-  end
+template default_site_file do
+  source "default-site.erb"
+  owner "root"
+  group "root"
+  mode 0644
 end
 
 service "nginx" do

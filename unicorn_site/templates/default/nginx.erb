@@ -16,7 +16,7 @@ server {
     server_name <%= node[:unicorn_site][:server_name] %>;
 
     root <%= node[:unicorn_site][:root] %>;
-    access_log /var/log/nginx/my_site_access.log;
+    access_log /var/log/nginx/<%= node[:unicorn_site][:upstream_name] %>_access.log;
     rewrite_log on;
 
     location / {
