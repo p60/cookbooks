@@ -58,5 +58,5 @@ end
 
 execute "make install" do
   cwd "/usr/local/src/node-v#{node[:nodejs][:version]}"
-  not_if "test `#{node[:nodejs][:dir]}/bin/node` == 'v#{node[:nodejs][:version]}'"
+  not_if "test `#{node[:nodejs][:dir]}/bin/node --version` == 'v#{node[:nodejs][:version]}'"
 end
